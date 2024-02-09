@@ -26,7 +26,7 @@ constexpr std::array<int, N> initialize_array_metaprogramming() {
 }
 
 int main() {
-    constexpr size_t array_size = 10000;
+    constexpr size_t array_size = 100000;
 
     auto start1 = chrono::high_resolution_clock::now(); 
     auto arr_runtime = initialize_array_runtime<array_size>();
@@ -47,10 +47,8 @@ int main() {
         std::cout << elem << " ";
     }
     std::cout << std::endl;
-    cout << "Time taken for Normal Execution: " << dur1.count() << endl;
-    cout << "Time taken for metaprogramming: " << dur2.count() << endl;
-
-    cout << "Hence, Template Programming execution is always constant time " << endl;
+    cout << "Time taken for Normal Execution: " << dur1.count() << " nanoseconds " << endl;
+    cout << "Time taken for metaprogramming: " << dur2.count() << " nanoseconds" << endl;
 
     return 0;
 }
